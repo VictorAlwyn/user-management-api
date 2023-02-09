@@ -148,6 +148,26 @@ Access `http://localhost:<PORT>/>` and you're ready to go!
   > can change easily to diffrent ORM and migration tool.
 - Filename convention - `camelCase` should never be used. This leaves `snake_case` and `kebab-case`, I prefer `snake_case` for file.
 
+## JavaScript Standard Style
+
+### The Rules
+
+- **2 spaces** – for indentation
+- **Single quotes for strings** – except to avoid escaping
+- **No unused variables** – this one catches *tons* of bugs!
+- **No semicolons** – [It's][1] [fine.][2] [Really!][3]
+- **Never start a line with `(`, `[`, or `` ` ``**
+  - This is the **only** gotcha with omitting semicolons – *automatically checked for you!*
+  - [More details][4]
+- **Space after keywords** `if (condition) { ... }`
+- **Space after function name** `function name (arg) { ... }`
+- Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
+- Always handle the node.js `err` function parameter
+- Always prefix browser globals with `window` – except `document` and `navigator` are okay
+  - Prevents accidental use of poorly-named browser globals like `open`, `length`,
+    `event`, and `name`.
+- **And [more goodness](https://standardjs.com/)**
+
 ## Using Sequelize
 
 Sequelize is used to define mappings between models and database tables. It will automatically add the attributes `created_at` and `updated_at` to the tables created. However for consistency for our naming we change this to `createdAt` and `updatedAt`. This will cause issue when using model so we have to add this on config:
@@ -255,26 +275,6 @@ The following dev dependencies are required for development and testing:
 - Ts-node: Used for running TypeScript code with Node.js.
 - Tslint: Used for linting the TypeScript code.
 - TypeScript: Used for writing the application code.
-
-## JavaScript Standard Style
-
-### The Rules
-
-- **2 spaces** – for indentation
-- **Single quotes for strings** – except to avoid escaping
-- **No unused variables** – this one catches *tons* of bugs!
-- **No semicolons** – [It's][1] [fine.][2] [Really!][3]
-- **Never start a line with `(`, `[`, or `` ` ``**
-  - This is the **only** gotcha with omitting semicolons – *automatically checked for you!*
-  - [More details][4]
-- **Space after keywords** `if (condition) { ... }`
-- **Space after function name** `function name (arg) { ... }`
-- Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
-- Always handle the node.js `err` function parameter
-- Always prefix browser globals with `window` – except `document` and `navigator` are okay
-  - Prevents accidental use of poorly-named browser globals like `open`, `length`,
-    `event`, and `name`.
-- **And [more goodness](https://standardjs.com/)**
 
 ## Contributing
 
